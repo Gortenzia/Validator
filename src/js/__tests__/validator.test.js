@@ -1,13 +1,13 @@
 import Validator from '../validator';
 
 test.each([
-  ['Maria', true],
+  ['M_a_r_i_s_a', true],
   ['Zamzam326', false],
   ['-Volvo432-', false],
   ['_Solnshko_', false],
-  ['Kuba1986', false],
+  ['KubaLibra', true],
   ['LIGA5678N', false],
-  ['Line668ln', true],
+  ['Line668ln', false],
 ])(('Проверка метода validateUsername(%s) === %s'), (obj, exp) => {
   expect(Validator.validateUsername(obj)).toBe(exp);
 });
