@@ -1,11 +1,7 @@
 export default class Validator {
-  // eslint-disable-next-line consistent-return
   static validateUsername(login) {
-    const check1 = new RegExp('^[a-zA-Z]+[a-zA-Z-_[0-9]*]+[a-zA-Z]+$');
-    const check2 = new RegExp(!'[0-9]{3}');
-    if (check1 && check2) {
-      return check1.test(login) && check2.test(login);
-    }
+    this.login = login;
+    return /^[a-z][a-z\d*\-_]+[a-z]$/.test(this.login) && !/\d{3}/.test(this.login);
   }
 }
 
