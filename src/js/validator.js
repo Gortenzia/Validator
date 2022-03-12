@@ -1,7 +1,6 @@
 export default class Validator {
   static validateUsername(login) {
-    this.login = login;
-    return /^[a-z][a-z\d*\-_]+[a-z]$/.test(this.login) && !/\d{3}/.test(this.login);
+    return /^[a-zA-Z][\w_]*[a-zA-Z]$/.test(login) && !/\d{4}/.test(login);
   }
 }
 
